@@ -12,7 +12,7 @@
     <th class="tg-m1tb">Action</th>
   </tr>
   <tr ng-repeat="appointment in appointments | orderBy: 'createdAt' | filter: filter" ng-if="appointment.date >= today">
-      <td class="tg-yw4l">{{appointment.date | date: 'short'}}</td>
+      <td class="tg-yw4l">{{appointment.date | date}}</td>
     <td class="tg-yw4l">{{appointment.time}}</td>
     <td class="tg-yw4l">{{appointment._user.name}}</td>
     <td class="tg-yw4l">{{appointment.complaint}}</td>
