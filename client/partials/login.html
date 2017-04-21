@@ -1,0 +1,7 @@
+<div ng-controller="usersController">
+    <h1>Please Log-In or Register with your Name</h1>
+
+    <p style="background-color: red;" ng-repeat="error in errors">{{error.message}}</p>
+    <p>Name: <input type="text" ng-model="newUser.name"></p>
+    <button type="button" ng-click="login()">Login/Register</button>
+</div>

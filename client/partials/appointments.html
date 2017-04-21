@@ -1,0 +1,23 @@
+<div ng-controller="appointmentsController">
+    <button type="button" ng-click="logout()">LOGOUT</button>
+    <h1>Doctor's Appointments</h1>
+    <p style="background-color: red;" ng-repeat="error in errors">{{error.message}}</p>
+    <p>Search: <input type="text" ng-model="filter"></p>
+    <table class="tg">
+  <tr>
+      <th class="tg-m1tb">Date</th>
+    <th class="tg-m1tb">Time</th>
+    <th class="tg-6uc3">Patient Name</th>
+    <th class="tg-m1tb">Complaint</th>
+    <th class="tg-m1tb">Action</th>
+  </tr>
+  <tr ng-repeat="appointment in appointments | orderBy: 'createdAt' | filter: filter" ng-if="appointment.date >= today">
+      <td class="tg-yw4l">{{appointment.date | date: 'short'}}</td>
+    <td class="tg-yw4l">{{appointment.time}}</td>
+    <td class="tg-yw4l">{{appointment._user.name}}</td>
+    <td class="tg-yw4l">{{appointment.complaint}}</td>
+    <td class="tg-yw4l"><button ng-if="appointment._user.name == user_name" ng-click="destroy(appointment._id)">Cancel</button></td>
+  </tr>
+</table>
+<a href="#!/new_appointment">Add New Appointment</a>
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="appointmentsController">
+
+    <h1>New Appointment</h1>
+    <p style="background-color: red;" ng-repeat="error in errors">{{error.message}}</p>
+    <p>Date: <input type="date" min="today" ng-model="newAppointment.date"> | Time: <select ng-model="newAppointment.time">
+        <option value="8:00AM - 9:00AM">8:00AM - 9:00AM</option>
+        <option value="9:00AM - 10:00AM">9:00AM - 10:00AM</option>
+        <option value="10:00AM - 11:00AM">10:00AM - 11:00AM</option>
+        <option value="11:00AM - 12:00PM">11:00AM - 12:00PM</option>
+        <option value="12:00PM - 1:00PM">12:00PM - 1:00PM</option>
+        <option value="1:00PM - 2:00PM">1:00PM - 2:00PM</option>
+        <option value="2:00PM - 3:00PM">2:00PM - 3:00PM</option>
+        <option value="3:00PM - 4:00PM">3:00PM - 4:00PM</option>
+        <option value="4:00PM - 5:00PM">4:00PM - 5:00PM</option>
+    </select></p>
+    <p>Complaint: <textarea rows="8" cols="80" ng-model="newAppointment.complaint"></textarea></p>
+    <a href="#!/appointments">Cancel</a> | <button type="button" ng-click="create()">Add Appointment</button>
+</div>
